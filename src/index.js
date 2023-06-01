@@ -39,7 +39,71 @@ const siteContent = { // BU NESNEYİ DEĞİŞTİRMEYİN
   },
 };
 
-console.log('Proje açıldı!')
+console.log('Proje açıldı!');
 
 
 /* Kodlar Buradan aşağıya */
+
+const aLinks = document.querySelectorAll("header nav a");
+
+aLinks.forEach((aitem, index) => {
+  aitem.className = "italic";
+  //aitem.classList.add("italic");
+  //aitem.setAttribute("class", "italic");
+  aitem.textContent = siteContent.nav[`nav-item-${index + 1}`];
+});
+
+
+document.getElementById("logo-img").src = siteContent.images["logo-img"];
+
+document.querySelector(".cta-text h1").textContent = siteContent.cta.h1;
+
+document.getElementsByTagName("button")[0].textContent=siteContent.cta.button;
+
+document.querySelector("#cta-img").setAttribute("src", siteContent.images["cta-img"]);
+
+const textcontenth4=document.querySelectorAll(".text-content h4");
+const textcontentp=document.querySelectorAll(".text-content p");
+
+textcontenth4[0].textContent=siteContent["ana-içerik"]["özellikler-h4"];
+
+textcontentp[0].textContent=siteContent["ana-içerik"]["özellikler-içerik"];
+
+textcontenth4[1].textContent=siteContent["ana-içerik"]["hakkımızda-h4"];
+
+textcontentp[1].textContent=siteContent["ana-içerik"]["hakkımızda-içerik"];
+
+
+textcontenth4[2].textContent=siteContent["ana-içerik"]["servisler-h4"];
+
+textcontentp[2].textContent=siteContent["ana-içerik"]["servisler-içeriği"];
+
+textcontenth4[3].textContent=siteContent["ana-içerik"]["ürünler-h4"];
+
+textcontentp[3].textContent=siteContent["ana-içerik"]["ürünler-içeriği"];
+
+
+textcontenth4[4].textContent=siteContent["ana-içerik"]["vizyon-h4"];
+
+textcontentp[4].textContent=siteContent["ana-içerik"]["vizyon-içeriği"];
+
+
+document.querySelector("#middle-img").setAttribute("src", siteContent.images["accent-img"]);
+
+document.querySelector(".contact h4").textContent =siteContent.iletisim["iletişim-h4"];
+
+const contacp=document.querySelectorAll(".contact p");
+
+
+contacp[0].textContent=siteContent.iletisim.adres;
+
+contacp[1].textContent=siteContent.iletisim.telefon;
+
+
+contacp[2].textContent=siteContent.iletisim.email;
+
+const footera=document.querySelector("footer a");
+
+footera.textContent=siteContent.footer.copyright;
+
+footera.setAttribute("class", "bold");
